@@ -32,19 +32,16 @@ public class MainController {
     }
 
     @GetMapping("/admin")
-    public String adminPage(){return "admin";}
+    public String adminPage(){return "register";}
 
     @PostMapping(path = "/create") // Map ONLY POST Requests
-    public @ResponseBody String addNewUser(@ModelAttribute ("user") User user, BindingResult bindingResult) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
+    public String addNewUser(@ModelAttribute ("user") User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()){
-            return "/registration";
+            return "/register";
         }
-
         userRepository.save(user);
-        return "redirect:/admin";
+        return "admin";
     }
 
     @GetMapping(path="/all")
