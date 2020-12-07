@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -40,13 +42,8 @@ public class MainController {
         if (bindingResult.hasErrors()){
             return "/register";
         }
+
         userRepository.save(user);
         return "admin";
-    }
-
-    @GetMapping(path="/all")
-    public @ResponseBody Iterable<User> getAllUsers() {
-        // This returns a JSON or XML with the users
-        return userRepository.findAll();
     }
 }
