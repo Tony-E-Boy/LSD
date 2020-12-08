@@ -14,7 +14,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
 </head>
-
+<body>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -23,7 +23,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a th:href="@{/admin}" class="nav-link">Home</a>
+            <a th:href="@{/}" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a th:href="@{/add-api}" class="nav-link">Add your API's</a>
@@ -78,27 +78,71 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
-
-                            <tbody>
                             <tr>
                                 <td>1.</td>
-                                <td>BitMax</td>
+                                <td>BitMax
+
+                                    <input type="text" class="form-control is-warning" id="inputGoogleAuth"
+                                           placeholder="6-digits Google-Auth">
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary col start">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Add Wallet</span>
+                                    </button>
+                                </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Enter ...">
+                                        <input type="text" class="form-control is-warning" id="inputPublicKeyBitmax"
+                                               placeholder="Public Key">
+                                        <hr>
+                                        <input type="text" class="form-control is-warning" id="inputPrivateKeyBitmax"
+                                               placeholder="Private Key">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>2.</td>
-                                <td>Binance</td>
+                                <td>Binance
+                                    <input type="text" class="form-control is-warning" id="inputGoogleAuth2"
+                                           placeholder="6-digits Google-Auth">
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary col start">
+                                        <i class="fas fa-upload"></i>
+                                        <span>Add Wallet</span>
+                                    </button>
+                                </td>
+
+
+
+
                                 <td>
                                     <div class="form-group">
-                                        <input type="text" class="form-control is-warning" id="inputWarning1" placeholder="Enter ...">
+                                        <input type="text" class="form-control is-warning" id="inputPublicKeyBinance"
+                                               placeholder="Public Key">
+                                        <hr>
+                                        <input type="text" class="form-control is-warning" id="inputPrivateKeyBinance"
+                                               placeholder="Private Key">
                                     </div>
                                 </td>
                             </tr>
-                            </tbody>
+                            <tr>
+                                <td>2.</td>
+                                <td>ERC-20 Wallet by ETH
+                                    <div class="btn-group w-100">
+                                        <button type="submit" class="btn btn-primary col start">
+                                            <i class="fas fa-upload"></i>
+                                            <span>Add Wallet</span>
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control is-warning" id="inputWarning2"
+                                               placeholder="6b65e98a95a890293d4bfcae6928586a8c94d481d261207451f5719242e2f4f4">
+                                    </div>
+                                </td>
+                            </tr>
+
                         </table>
                     </div>
                 </div>
