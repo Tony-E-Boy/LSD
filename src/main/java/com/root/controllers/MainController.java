@@ -46,4 +46,7 @@ public class MainController {
         userRepository.save(user);
         return "admin";
     }
+
+    @GetMapping("/add-api")
+    public String addApi(){return "add-api";}
 }

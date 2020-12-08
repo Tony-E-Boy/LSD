@@ -1,14 +1,3 @@
-/*!
- *   AdminLTE v3.1.0-rc
- *   Author: Colorlib
- *   Website: AdminLTE.io <https://adminlte.io>
- *   License: Open source - MIT <https://opensource.org/licenses/MIT>
- *//*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -18430,6 +18419,7 @@ body.text-sm .input-group-text {
 .card {
     box-shadow: 0 0 1px rgba(0, 0, 0, .125), 0 1px 3px rgba(0, 0, 0, .2);
     margin-bottom: 1rem
+    ma
 }
 
 .card.bg-dark .card-header {
@@ -31217,5 +31207,3 @@ a.text-muted:hover {
 .dark-mode .link-black, .dark-mode .link-dark, .dark-mode .text-black, .dark-mode .text-dark {
     color: #ced4da
 }
-
-/*# sourceMappingURL=adminlte.min.css.map */
