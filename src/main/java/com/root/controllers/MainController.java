@@ -49,4 +49,13 @@ public class MainController {
 
     @GetMapping("/add-api")
     public String addApi(){return "add-api";}
+
+    @GetMapping("/buy-ipo")
+    public String buyIpo() {return "buyipo";}
+
+    @GetMapping("/buy-ico")
+    public String buyIco() {return "buyico";}
+
+    @GetMapping("/trade")
+    public String tradePage() {return "trade";}
 }
