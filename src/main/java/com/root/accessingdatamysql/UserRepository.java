@@ -1,6 +1,6 @@
 package com.root.accessingdatamysql;
 
-import com.root.model.User;
+import com.root.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
