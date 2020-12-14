@@ -2,6 +2,7 @@ package com.root.controllers;
 
 import com.root.accessingdatamysql.UserRepository;
 import com.root.entity.User;
+import com.root.entity.UserAccount;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.validation.BindingResult;
@@ -48,7 +49,7 @@ public class MainController {
     }
 
     @PostMapping(path = "/create")
-    public String addNewUser(HttpServletRequest request, @ModelAttribute("user") User user, BindingResult bindingResult) {
+    private String addNewUser(HttpServletRequest request, @ModelAttribute("user") User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "/register";
@@ -63,6 +64,14 @@ public class MainController {
         user.setHex(q);
 
         /*checked method*/
+
+        /*      anything code ...   */
+        UserAccount userAccount = new UserAccount();
+            userAccount.setEmailaccount(user.getEmail());
+            userAccount.setHexaccount(q);
+
+            userAccount.setRole("user");
+
 
         userRepository.save(user);
         return "admin";
