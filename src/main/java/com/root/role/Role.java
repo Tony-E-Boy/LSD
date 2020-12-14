@@ -39,4 +39,7 @@ public class Role  {
                 ", USER=" + USER +
                 '}';
     }
+
+    public Role() {}
+
 }
