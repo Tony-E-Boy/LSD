@@ -3,12 +3,17 @@ package com.root.controllers;
 import com.root.accessingdatamysql.UserRepository;
 import com.root.entity.User;
 import com.root.entity.UserAccount;
+import com.root.role.Role;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/")
@@ -75,6 +80,20 @@ public class MainController {
 
         userRepository.save(user);
         return "admin";
+    }
+
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)  throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse resp = (HttpServletResponse) response;
+        HttpSession session = req.getSession();
+
+        Role type = (Role) session.getAttribute("userType");
+        if (type == null) {
+            type = Role.USER;
+            session.setAttribute("userType", type);
+
+            return ;
+        }
     }
 
     @GetMapping("/autorisationFailedPage")
